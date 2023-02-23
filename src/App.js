@@ -225,7 +225,7 @@ function App() {
         </Box>
         <Box component="main">
           {!loading && !error && (
-            <Box sx={{ padding: '0 20px', textAlign: 'center' }}>
+            <Box sx={{ padding: '0 20px', marginBottom: '20px' }}>
               <StyledTableContainer component={Paper}>
                 <StyledTable aria-label="customized table">
                   <TableHead>
