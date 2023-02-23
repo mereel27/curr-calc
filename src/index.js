@@ -5,9 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// Fetch counter to mock server error
 const localCounter = Number(localStorage.getItem('counter') || 0);
 localStorage.setItem('counter', localCounter + 1);
 if (localCounter >= 4) localStorage.setItem('counter', 0);
+
 root.render(
   <React.StrictMode>
     <App />

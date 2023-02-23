@@ -47,6 +47,7 @@ import {
   fixValue,
   validateNumber,
 } from './utils/utils';
+import errorImg from './img/error.svg';
 
 function App() {
   const [defaultCurrencyRates, setDefaultCurrencyRates] = useState([]);
@@ -450,9 +451,12 @@ function App() {
 
           {/* Error message */}
           {error && (
+            <>
             <p style={{ color: 'red' }}>
               Some error occured. Please, try again later....
             </p>
+            <img src={errorImg} width='200px' alt='error'></img>
+            </>
           )}
         </Box>
         <Box
