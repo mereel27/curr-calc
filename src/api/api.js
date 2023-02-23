@@ -22,16 +22,15 @@ const getBtcRate = async () => {
 
 export default async function getCurrencyRates() {
   const localCounter = Number(localStorage.getItem('counter') || 0);
+
   if(localCounter >= 5) {
-    console.log('hello')
     localStorage.setItem('counter', 0)
     console.error('Failed to fetch data')
     return [];
   } else {
     localStorage.setItem('counter', localCounter + 1)
-    console.log(localCounter)
   }
-  console.log(localCounter)
+  
   const results = await Promise.allSettled([
     fetchData(
       'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5'

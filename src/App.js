@@ -3,7 +3,7 @@ import '@fontsource/inter/400.css';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/600.css';
 import '@fontsource/inter/700.css';
-import "@fontsource/josefin-sans/700.css"
+import '@fontsource/josefin-sans/700.css';
 import './App.css';
 import { useCallback, useEffect, useState } from 'react';
 import getCurrencyRates from './api/api';
@@ -30,14 +30,22 @@ import tableTheme from './utils/tableTheme';
 import EditButton from './components/EditButton';
 import CellInput from './components/CellInput';
 import CalculatorBox from './components/CalculatorBox';
-import { Button, TextField, Box, Stack, MenuItem, Select, Typography } from '@mui/material';
+import {
+  Button,
+  TextField,
+  Box,
+  Stack,
+  MenuItem,
+  Select,
+  Typography,
+} from '@mui/material';
 import {
   onlyDecimals,
   currencyLabels,
   convertCurrency,
   isValidInput,
   fixValue,
-  validateNumber
+  validateNumber,
 } from './utils/utils';
 
 function App() {
@@ -59,26 +67,17 @@ function App() {
   const [toBuyValue, setToBuyValue] = useState('');
 
   useEffect(() => {
-    /* const localCounter = localStorage.getItem('counter') || 0;
-    console.log(localCounter)
-    if (Number(localCounter) > 3) {
-      console.log('true')
-      setCurrencyRates([]);
-      localStorage.setItem('counter', 0)
-    } else { */
-      getCurrencyRates().then((res) => {
-        setCurrencyRates(res);
-        setDefaultCurrencyRates(
-          res.map((el) => {
-            return { ...el };
-          })
-        );
-        if (res.length === 0) {
-          setError(true);
-        }
-      });
-      /* localStorage.setItem('counter', Number(localCounter) + 1);
-    } */
+    getCurrencyRates().then((res) => {
+      setCurrencyRates(res);
+      setDefaultCurrencyRates(
+        res.map((el) => {
+          return { ...el };
+        })
+      );
+      if (res.length === 0) {
+        setError(true);
+      }
+    });
   }, []);
 
   useEffect(() => {
@@ -210,7 +209,7 @@ function App() {
           component="header"
         >
           <Typography
-            textTransform='uppercase'
+            textTransform="uppercase"
             sx={{
               color: 'white',
               height: '100%',
@@ -218,7 +217,7 @@ function App() {
               alignItems: 'center',
               fontWeight: 700,
               fontFamily: 'Josefin Sans, sans-serif',
-              letterSpacing: 1.1
+              letterSpacing: 1.1,
             }}
           >
             Currency <br></br>calculator
