@@ -44,8 +44,8 @@ export const convertCurrency = (
 ) => {
   const saleCurr = currencyRates.find((el) => el.ccy === currencyForSale);
   const buyCurr = currencyRates.find((el) => el.ccy === currencyToBuy);
-  const saleBase = Number(saleCurr?.base_ccy);
-  const buyBase = Number(buyCurr?.base_ccy);
+  const saleBase = saleCurr?.base_ccy;
+  const buyBase = buyCurr?.base_ccy;
   let salePrice;
   let buyPrice;
 
