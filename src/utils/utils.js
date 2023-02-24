@@ -32,7 +32,7 @@ export const fixValue = (value, precision = 2) => {
   if (typeof value === 'string') {
     toFormat = value.replace(',', '.');
   }
-  return Number(Number(toFormat).toFixed(precision))
+  return Number(Number(toFormat).toFixed(precision));
 };
 
 export const convertCurrency = (
@@ -72,14 +72,20 @@ export const convertCurrency = (
   }
 
   if (forSaleValue) {
-    const value = typeof forSaleValue === 'string' ? Number(forSaleValue.replace(',', '.')) : forSaleValue;
+    const value =
+      typeof forSaleValue === 'string'
+        ? Number(forSaleValue.replace(',', '.'))
+        : forSaleValue;
     const newValue = (salePrice / buyPrice) * value;
     const precision = currencyToBuy === 'BTC' ? 10 : 3;
     return fixValue(newValue, precision, true);
   }
 
   if (toBuyValue) {
-    const value = typeof toBuyValue === 'string' ? Number(toBuyValue.replace(',', '.')) : toBuyValue;
+    const value =
+      typeof toBuyValue === 'string'
+        ? Number(toBuyValue.replace(',', '.'))
+        : toBuyValue;
     const newValue = (buyPrice / salePrice) * value;
     const precision = currencyForSale === 'BTC' ? 10 : 3;
     return fixValue(newValue, precision, true);
