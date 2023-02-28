@@ -29,9 +29,7 @@ export default async function getCurrencyRates() {
   }
 
   const results = await Promise.allSettled([
-    fetchData(
-      'https://curr-calc.netlify.app/p24api'
-    ),
+    fetchData('/p24api/pubinfo?json&exchange&coursid=5'),
     getBtcRate(),
   ]);
   if (results.every(res => res.status === 'fulfilled')) {
