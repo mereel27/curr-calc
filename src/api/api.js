@@ -30,7 +30,7 @@ export default async function getCurrencyRates() {
 
   const results = await Promise.allSettled([
     fetchData(
-      'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5'
+      'https://curr-calc.netlify.app/p24api'
     ),
     getBtcRate(),
   ]);
